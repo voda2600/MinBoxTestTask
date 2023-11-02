@@ -1,0 +1,12 @@
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\bin\Debug\net6.0\FigureAreaCalcLib.deps.json
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\bin\Debug\net6.0\FigureAreaCalcLib.dll
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\bin\Debug\net6.0\FigureAreaCalcLib.pdb
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.csproj.AssemblyReference.cache
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.AssemblyInfoInputs.cache
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.AssemblyInfo.cs
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.csproj.CoreCompileInputs.cache
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.dll
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\refint\FigureAreaCalcLib.dll
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\FigureAreaCalcLib.pdb
+C:\Users\Albert\Desktop\Mindbox\FigureAreaCalcLib\obj\Debug\net6.0\ref\FigureAreaCalcLib.dll
