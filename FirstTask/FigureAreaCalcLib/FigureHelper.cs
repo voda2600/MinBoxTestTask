@@ -5,13 +5,13 @@ namespace FigureAreaCalcLib;
 public abstract class FigureHelper
 {
     /// <summary>
-    /// Вычисление площади фигуры по параметрам
+    /// Вычисление площади фигуры с автоматическим определением типа фигуры
     /// </summary>
     public static double CalculateArea(int accurate, params double[] sides)
     {
-        var fig = FigureFactory.DefineFigureBySides(sides);
+        var figure = FigureFactory.DefineFigureBySides(sides);
 
-        return fig.CalculateArea(accurate);
+        return figure.CalculateArea(accurate);
     }
     
     /// <summary>
@@ -19,12 +19,7 @@ public abstract class FigureHelper
     /// </summary>
     public static bool IsTriangleRectangular(double sideA, double sideB, double sideC)
     {
-        var figure = FigureFactory.DefineFigureBySides(sideA, sideB, sideC);
-        if (figure is Triangle triangle)
-        {
-            return triangle.IsRectangular();
-        }
-
-        return false;
+        var triangle = new Triangle(sideA, sideB, sideC);
+        return triangle.IsRectangular();
     }
 }

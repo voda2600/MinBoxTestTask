@@ -19,7 +19,6 @@ public class FigureLibTest
     public void TestCalculateArea_ValidSides_TrueCompareWithValidArea(double[] sides, double actualArea)
     {
         var area = FigureHelper.CalculateArea(Accurate, sides);
-
         var areaComparison = Math.Abs(area - actualArea) < double.Epsilon;
 
         Assert.True(areaComparison);
