@@ -8,5 +8,5 @@ public interface IHasAreaFigure
     /// <summary>
     /// Вычисление площади
     /// </summary>
-    public double CalculateArea();
+    public double CalculateArea(int accurate);
 }

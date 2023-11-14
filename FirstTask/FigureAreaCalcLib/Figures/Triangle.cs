@@ -1,46 +1,40 @@
-﻿using FigureAreaCalcLib.Dto;
-using FigureAreaCalcLib.Interfaces;
+﻿using FigureAreaCalcLib.Interfaces;
 
 namespace FigureAreaCalcLib.Figures;
 
 /// <inheritdoc />
-public class Triangle : IHasAreaFigure
+internal class Triangle : IHasAreaFigure
 {
-    private readonly TriangleData _triangleData;
+    private readonly (double A, double B, double C) _triangleData;
 
-    public Triangle(TriangleData triangleData)
+    public Triangle(double a, double b, double c)
     {
+        var triangleData = (a, b, c);
         Validate(triangleData);
         _triangleData = triangleData;
     }
 
-    public double CalculateArea()
+    public double CalculateArea(int accurate)
     {
         var halfPerimeter = (_triangleData.A + _triangleData.B + _triangleData.C) / 2;
-        return Math.Sqrt(halfPerimeter * (halfPerimeter - _triangleData.A) * (halfPerimeter - _triangleData.B) *
-                         (halfPerimeter - _triangleData.C));
+        
+        return Math.Round(Math.Sqrt(halfPerimeter * (halfPerimeter - _triangleData.A) * (halfPerimeter - _triangleData.B) *
+                         (halfPerimeter - _triangleData.C)), accurate);
     }
 
     public bool IsRectangular()
     {
         return _triangleData.A * _triangleData.A + _triangleData.B * _triangleData.B -
-               _triangleData.C * _triangleData.C == 0
+               _triangleData.C * _triangleData.C < double.Epsilon
                || _triangleData.A * _triangleData.A + _triangleData.C * _triangleData.C -
-               _triangleData.B * _triangleData.B == 0
+               _triangleData.B * _triangleData.B < double.Epsilon
                || _triangleData.C * _triangleData.C + _triangleData.B * _triangleData.B -
-               _triangleData.A * _triangleData.A == 0;
+               _triangleData.A * _triangleData.A < double.Epsilon;
     }
 
-    private static void Validate(TriangleData triangleData)
+    private static void Validate((double A, double B, double C) triangleData)
     {
-        if (triangleData is null)
-        {
-            throw new ArgumentException();
-        }
-
-        var triangleIsValid = triangleData.A > 0
-                              && triangleData.B > 0
-                              && triangleData.C > 0
+        var triangleIsValid = triangleData is { A: > 0, B: > 0, C: > 0 }
                               && triangleData.A + triangleData.B > triangleData.C
                               && triangleData.A + triangleData.C > triangleData.B
                               && triangleData.B + triangleData.C > triangleData.A;

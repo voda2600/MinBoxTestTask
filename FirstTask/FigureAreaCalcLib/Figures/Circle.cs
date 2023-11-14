@@ -1,32 +1,26 @@
-﻿using FigureAreaCalcLib.Dto;
-using FigureAreaCalcLib.Interfaces;
+﻿using FigureAreaCalcLib.Interfaces;
 
 namespace FigureAreaCalcLib.Figures;
 
 /// <inheritdoc />
-public class Circle : IHasAreaFigure
+internal class Circle : IHasAreaFigure
 {
     private readonly double _r;
 
-    public Circle(CircleData circleData)
+    public Circle(double r)
     {
-        Validate(circleData);
-        _r = circleData.R;
+        Validate(r);
+        _r = r;
     }
 
-    public double CalculateArea()
+    public double CalculateArea(int accurate)
     {
-        return Math.PI * (_r * _r);
+        return Math.Round(Math.Round(Math.PI,2) * (_r * _r), accurate);
     }
 
-    private static void Validate(CircleData circleData)
+    private static void Validate(double r)
     {
-        if (circleData is null)
-        {
-            throw new ArgumentException();
-        }
-
-        if (circleData.R < 0)
+        if (r < 0)
         {
             throw new ArgumentException("The radius of the circle is negative");
         }
