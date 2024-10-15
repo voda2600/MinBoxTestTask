@@ -1,9 +1,10 @@
 ﻿using FigureAreaCalcLib.Interfaces;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FigureAreaCalcLib.Figures;
 
 /// <inheritdoc />
-internal class Circle : IHasAreaFigure
+public class Circle : IHasAreaFigure
 {
     private readonly double _r;
 
@@ -13,16 +14,22 @@ internal class Circle : IHasAreaFigure
         _r = r;
     }
 
-    public double CalculateArea(int accurate)
+    public double CalculateArea()
     {
-        return Math.Round(Math.Round(Math.PI,2) * (_r * _r), accurate);
+        return Math.PI * (_r * _r);
+
+
+    }
+    public double GetRadius()
+    {
+        return _r;
     }
 
     private static void Validate(double r)
     {
-        if (r < 0)
+        if (r <= 0)
         {
-            throw new ArgumentException("The radius of the circle is negative");
+            throw new ArgumentException("The radius of the circle is negative or zero");
         }
     }
 }

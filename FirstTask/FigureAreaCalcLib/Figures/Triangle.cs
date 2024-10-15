@@ -3,7 +3,7 @@
 namespace FigureAreaCalcLib.Figures;
 
 /// <inheritdoc />
-internal class Triangle : IHasAreaFigure
+public class Triangle : IHasAreaFigure
 {
     private readonly (double A, double B, double C) _triangleData;
 
@@ -14,12 +14,12 @@ internal class Triangle : IHasAreaFigure
         _triangleData = triangleData;
     }
 
-    public double CalculateArea(int accurate)
+    public double CalculateArea()
     {
         var halfPerimeter = (_triangleData.A + _triangleData.B + _triangleData.C) / 2;
         
-        return Math.Round(Math.Sqrt(halfPerimeter * (halfPerimeter - _triangleData.A) * (halfPerimeter - _triangleData.B) *
-                         (halfPerimeter - _triangleData.C)), accurate);
+        return Math.Sqrt(halfPerimeter * (halfPerimeter - _triangleData.A) * (halfPerimeter - _triangleData.B) *
+                         (halfPerimeter - _triangleData.C));
     }
 
     public bool IsRectangular()
